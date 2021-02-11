@@ -7,7 +7,10 @@ async function setupPlugin({ config, global }) {
 async function processEvent(event, { config, cache }) {
     const counter = await cache.get('counter', 0)
     cache.set('counter', counter + 1)
-
+    
+    // test event structure
+    console.log(JSON.stringify(event));
+    
     if (event.properties) {
         event.properties['hello'] = 'world'
         event.properties['bar'] = config.bar
