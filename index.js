@@ -1,5 +1,6 @@
+const { get, set } = require('./utils')
 async function setupPlugin({ config, global }) {
-    console.log("Setting up the plugin!")
+    console.log('Setting up the plugin!')
     console.log(config)
     global.setupDone = true
 }
@@ -7,10 +8,10 @@ async function setupPlugin({ config, global }) {
 async function processEvent(event, { config, cache }) {
     const counter = await cache.get('counter', 0)
     cache.set('counter', counter + 1)
-    
+
     // test event structure
-    console.log(JSON.stringify(event));
-    
+    console.log(JSON.stringify(event))
+
     if (event.properties) {
         event.properties['hello'] = 'world'
         event.properties['bar'] = config.bar
@@ -28,6 +29,6 @@ module.exports = {
 
 // Internal library functions below
 
-function libFunction (number) {
-    return number * 2;
+function libFunction(number) {
+    return number * 2
 }
