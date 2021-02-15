@@ -1,6 +1,6 @@
 {
     "name": "posthog-helloworld-plugin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Greet the World and Foo a Bar, JS edition!",
     "main": "index.js",
     "scripts": {
